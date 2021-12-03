@@ -25,7 +25,7 @@ class HashTable {
         void Insert(int key){
             int hash_value = Hash(key);
             while(table[hash_value] != -1){
-                hash_value = (hash_value + 1) % size;
+                hash_value = (hash_value % size + 1) % size;
             }
             table[hash_value] = key;
         }
